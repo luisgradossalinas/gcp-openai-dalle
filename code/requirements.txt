@@ -2,3 +2,4 @@ google-cloud-bigquery
 google-cloud-firestore
 google-cloud-pubsub
 openai
+requests

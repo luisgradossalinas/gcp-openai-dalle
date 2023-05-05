@@ -10,6 +10,16 @@ from google.cloud import pubsub_v1
 project_id = "hypnotic-guard-368114" #str(sys.argv[1])
 topic_id = "topic-dalle-streaming" #str(sys.argv[2]) 
 
+#read value secret manager
+
+#put datastore
+
+#insertr table big query
+
+# put cloud storage image dalle
+
+sys.exit(1)
+
 record = {
     'msg': "dfg"
 }
