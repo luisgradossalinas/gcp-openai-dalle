@@ -4,18 +4,18 @@
 
 En Cloud Shell.
 
-export PROJECT_ID=TUPROJECTID
+	export PROJECT_ID=TUPROJECTID
 
 Ejecutar.
 
-gcloud config set project $PROJECT_ID
+	gcloud config set project $PROJECT_ID
 
 Ejecutar en Cloud Shell.
 
-cd iac
-terraform init
+	cd iac
+	terraform init
 
 Crear los recursos en Google Cloud.
 
-terraform apply -var="project=$PROJECT_ID" -var="openai_apikey=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"
+	terraform apply -var="project=$PROJECT_ID" -var="openai_apikey=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"
 
