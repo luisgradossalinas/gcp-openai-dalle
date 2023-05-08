@@ -28,7 +28,7 @@ resource "google_bigquery_dataset" "dalle_data" {
   delete_contents_on_destroy = true
 }
 
-resource "google_secret_manager_secret" "secret-basic-openai" {
+resource "google_secret_manager_secret" "secret-openai" {
   secret_id = "OPENAI_APIKEY"
 
   replication {
@@ -36,9 +36,23 @@ resource "google_secret_manager_secret" "secret-basic-openai" {
   }
 }
 
-resource "google_secret_manager_secret_version" "secret-version-basic" {
-  secret = google_secret_manager_secret.secret-basic-openai.id
+resource "google_secret_manager_secret_version" "secret-version-openai" {
+  secret = google_secret_manager_secret.secret-openai.id
   secret_data = var.openai_apikey
+}
+
+resource "google_secret_manager_secret" "secret-ultramsg" {
+  secret_id = "ULTRAMSG"
+
+  replication {
+    automatic = true
+  }
+}
+
+resource "google_secret_manager_secret_version" "secret-version-ultramsg" {
+  secret = google_secret_manager_secret.secret-ultramsg.id
+  secret_data = var.ultramsg
+
 }
 
 resource "google_pubsub_topic" "topic_streaming" {
@@ -46,20 +60,37 @@ resource "google_pubsub_topic" "topic_streaming" {
   name    = "topic-dalle-streaming"
 }
 
-resource "google_pubsub_subscription" "sub_streaming" {
-  project = var.project
-  name    = "dalle-subscription"
-  topic   = google_pubsub_topic.topic_streaming.name
+#resource "google_pubsub_subscription" "sub_streaming" {
+#  project = var.project
+#  name    = "dalle-subscription"
+#  topic   = google_pubsub_topic.topic_streaming.name
+#}
 
+resource "google_service_account" "sa_function" {
+  account_id   = "service-account-function"
+  display_name = "Service Account for use in Cloud Functions"
+}
+
+resource "google_project_iam_binding" "iam_function" {
+  project = var.project
+  role    = "roles/workflows.invoker"
+  members = [
+    "serviceAccount:${google_service_account.sa_function.email}"
+  ]
 }
 
 resource "google_cloudfunctions2_function" "function" {
   name        = "fnc-dalle-generate-image"
   location    = "us-central1"
-  description = "a new function"
+  description = "Read message pub/sub and generate images with Dall-e, send image by WhatsApp"
+
+  event_trigger {
+    event_type = "google.pubsub.topic.publish"
+    resource   = google_pubsub_topic.topic_streaming.id
+  }
 
   build_config {
-    runtime     = "python310"
+    runtime     = "python311"
     entry_point = "main_handler"
     source {
       storage_source {
@@ -77,21 +108,10 @@ resource "google_cloudfunctions2_function" "function" {
         BUCKET_NAME = google_storage_bucket.images.name
         PROJECT_ID = var.project
         DATASET_BRONZE = google_bigquery_dataset.bronze.dataset_id
+        OPENAI_APIKEY = "OPENAI_APIKEY"
+        ULTRAMSG = "ULTRAMSG"
     }
   }
-}
-
-resource "google_service_account" "sa_function" {
-  account_id   = "service-account-function"
-  display_name = "Service Account for use in Cloud Functions"
-}
-
-resource "google_project_iam_binding" "iam_function" {
-  project = var.project
-  role    = "roles/workflows.invoker"
-  members = [
-    "serviceAccount:${google_service_account.sa_function.email}"
-  ]
 }
 
 output "bucket_images" {

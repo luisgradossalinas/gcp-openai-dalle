@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request
-import boto3
+from google.cloud import pubsub_v1
 import json
 import uuid
+import os
 
 app = Flask(__name__)
 
-kinesis = boto3.client("kinesis", region_name = "us-east-1")
-stream_name = "StreamDalle"
+publisher = pubsub_v1.PublisherClient()
+project_id = os.environ["GOOGLE_CLOUD_PROJECT"]
+topic_id = "topic-dalle-streaming"
 
 @app.route('/')
 def index():
@@ -26,12 +28,13 @@ def submit():
     }
     
     list_param = [name, cel, msg]
-    
-    kinesis.put_record(
-        StreamName = stream_name,
-        Data = json.dumps(data),
-        PartitionKey = str(uuid.uuid4())
-    )
+
+    topic_path = publisher.topic_path(project_id, topic_id)
+
+
+    # Enviar un mensaje vacío con los atributos
+    future = publisher.publish(topic_path, b'', **data)
+    future.result()
 
     return render_template('success.html', data = list_param)
 

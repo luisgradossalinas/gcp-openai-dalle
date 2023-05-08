@@ -10,3 +10,7 @@ variable "project" {
 variable "openai_apikey" {
   type = string
 }
+
+variable "ultramsg" {
+  type = string
+}

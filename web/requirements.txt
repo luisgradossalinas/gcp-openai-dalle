@@ -1,2 +1,2 @@
+google-cloud-pubsub
 Flask==2.2.4
-boto3
