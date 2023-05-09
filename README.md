@@ -119,5 +119,6 @@ Ejecutar en Cloud Shell.
 	gcloud run services delete flask-web-dalle --region us-central1
 	bq rm -r -d -f $PROJECT_ID:ds_dalle
 	gcloud storage ls | grep images | awk {'print "gcloud storage rm --recursive " $1 " "'} | sh
+	terraform destroy --auto-approve
 
 Si se desea mantener los recursos creados, tener en cuenta el precio de cada servicio.
