@@ -63,11 +63,11 @@ Ingresamos datos en el formulario.
 
 Texto a generar por ejemplo : Mont Saint Michel of France from an aerial view in the day
 
-<img width="700" src="https://user-images.githubusercontent.com/2066453/">
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236975721-b380695f-300b-4750-a5f0-6e99ed21eb0a.png">
 
 Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
-aaaaaa
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236975778-5e042c9d-e907-43f6-bf69-826255b7abfc.png">
 
 ## Documentación
 https://realpython.com/generate-images-with-dalle-openai-api
