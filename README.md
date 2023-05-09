@@ -109,3 +109,9 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 ## Agradecimientos
 
 Espero te haya servido esta solución, si pudiste replicarlo, puedes publicarlo en LinkedIn con tus aportes, cambios y etiquétame (https://www.linkedin.com/in/luisgrados).
+
+## Eliminar recursos
+
+No olvidar eliminar los recursos, para no incurrir en costos inesperados.
+
+Si se desea mantener los recursos creados, tener en cuenta el precio de cada servicio.
