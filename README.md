@@ -66,17 +66,13 @@ Ingresamos datos en el formulario, que generará una imagen en Dall-e y será en
 
 Texto a generar en Dall-e por ejemplo : Mont Saint Michel of France from an aerial view in the day
 
-<img width="700" src="https://user-images.githubusercontent.com/2066453/236975721-b380695f-300b-4750-a5f0-6e99ed21eb0a.png">
-
-<img width="700" src="https://user-images.githubusercontent.com/assets/2066453/20e2e1e1-2d98-4b24-acd4-2563b63d877b">
-
 Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236975778-5e042c9d-e907-43f6-bf69-826255b7abfc.png">
 
 ## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
 
-	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mount Saint Michael of France from an aerial view"
+	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mont Saint Michael of France from an aerial view"
 
 ## Documentación
 
