@@ -21,11 +21,49 @@ resource "google_storage_bucket_object" "object" {
 }
 
 resource "google_bigquery_dataset" "dalle_data" {
-  dataset_id                  = "dalle_data"
-  description                 = "This is a test description"
+  dataset_id                  = "ds_dalle"
+  description                 = "Dataset dalle"
   location                    = var.region
 
   delete_contents_on_destroy = true
+}
+
+resource "google_bigquery_table" "dalle_table" {
+  dataset_id = google_bigquery_dataset.dalle_data.dataset_id
+  table_id   = "dalle_data"
+
+  schema = jsonencode([
+    {
+      "name" : "id",
+      "type" : "INT64",
+      "mode" : "NULLABLE"
+    },
+    {
+      "name" : "text_input",
+      "type" : "STRING",
+      "mode" : "NULLABLE"
+    },
+    {
+      "name" : "cel",
+      "type" : "STRING",
+      "mode" : "NULLABLE"
+    },
+    {
+      "name" : "name",
+      "type" : "STRING",
+      "mode" : "NULLABLE"
+    },
+    {
+      "name" : "url_img",
+      "type" : "STRING",
+      "mode" : "NULLABLE"
+    },
+    {
+      "name" : "freg",
+      "type" : "DATETIME",
+      "mode" : "NULLABLE"
+    }
+  ])
 }
 
 resource "google_secret_manager_secret" "secret-openai" {
@@ -60,33 +98,56 @@ resource "google_pubsub_topic" "topic_streaming" {
   name    = "topic-dalle-streaming"
 }
 
-#resource "google_pubsub_subscription" "sub_streaming" {
-#  project = var.project
-#  name    = "dalle-subscription"
-#  topic   = google_pubsub_topic.topic_streaming.name
-#}
-
 resource "google_service_account" "sa_function" {
-  account_id   = "service-account-function"
+  account_id   = "service-account-function-dalle"
   display_name = "Service Account for use in Cloud Functions"
 }
 
-resource "google_project_iam_binding" "iam_function" {
+resource "google_project_iam_member" "example_sa_cloudfunctions" {
   project = var.project
-  role    = "roles/workflows.invoker"
-  members = [
-    "serviceAccount:${google_service_account.sa_function.email}"
-  ]
+  role    = "roles/cloudfunctions.serviceAgent"
+  member  = "serviceAccount:${google_service_account.sa_function.email}"
 }
 
+resource "google_project_iam_member" "example_sa_storage" {
+  project = var.project
+  role    = "roles/storage.objectAdmin"
+  member  = "serviceAccount:${google_service_account.sa_function.email}"
+}
+
+resource "google_project_iam_member" "example_sa_firestore" {
+  project = var.project
+  role    = "roles/datastore.user"
+  member  = "serviceAccount:${google_service_account.sa_function.email}"
+}
+
+resource "google_project_iam_member" "example_sa_pubsub" {
+  project = var.project
+  role    = "roles/pubsub.subscriber"
+  member  = "serviceAccount:${google_service_account.sa_function.email}"
+}
+
+resource "google_project_iam_member" "example_sa_secretmanager" {
+  project = var.project
+  role    = "roles/secretmanager.secretAccessor"
+  member  = "serviceAccount:${google_service_account.sa_function.email}"
+}
+
+resource "google_project_iam_member" "example_sa_bigquery" {
+  project = var.project
+  role    = "roles/bigquery.dataEditor"
+  member  = "serviceAccount:${google_service_account.sa_function.email}"
+}
+
+## cloud functions v2
 resource "google_cloudfunctions2_function" "function" {
   name        = "fnc-dalle-generate-image"
   location    = "us-central1"
-  description = "Read message pub/sub and generate images with Dall-e, send image by WhatsApp"
+  description = "Read message pub/sub, generate images with Dall-e and send image by WhatsApp"
 
   event_trigger {
-    event_type = "google.pubsub.topic.publish"
-    resource   = google_pubsub_topic.topic_streaming.id
+    event_type = "google.cloud.pubsub.topic.v1.messagePublished"
+    pubsub_topic = google_pubsub_topic.topic_streaming.id
   }
 
   build_config {
@@ -107,10 +168,12 @@ resource "google_cloudfunctions2_function" "function" {
     environment_variables = {
         BUCKET_NAME = google_storage_bucket.images.name
         PROJECT_ID = var.project
-        DATASET_BRONZE = google_bigquery_dataset.bronze.dataset_id
+        DATASET = google_bigquery_dataset.dalle_data.dataset_id
         OPENAI_APIKEY = "OPENAI_APIKEY"
         ULTRAMSG = "ULTRAMSG"
+        DALLE_TABLE= "dalle_data"
     }
+    service_account_email = google_service_account.sa_function.email
   }
 }
 

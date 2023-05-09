@@ -31,8 +31,6 @@ def submit():
 
     topic_path = publisher.topic_path(project_id, topic_id)
 
-
-    # Enviar un mensaje vacío con los atributos
     future = publisher.publish(topic_path, b'', **data)
     future.result()
 

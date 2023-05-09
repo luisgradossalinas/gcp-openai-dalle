@@ -23,10 +23,16 @@
 </ul>
 
 <a class="navbar-brand" href="/">Back</a>
-  <br><br>
-	<footer class="footer">
-		<p>&copy; <a href="https://www.linkedin.com/in/luisgrados">Martin Grados</a>  2023</p>
-	</footer>
+<footer class="footer">
+    <p>&copy; <a id="linkyear" href="https://www.linkedin.com/in/luisgrados"></a></p>
+</footer>
+
+<script>
+    const currentYear = new Date().getFullYear();
+    const linkElement = document.getElementById("linkyear");
+    linkElement.href = `https://www.linkedin.com/in/luisgrados`;
+    linkElement.innerText = `Martin Grados - ${currentYear}`;
+  </script>
 
 </div>
 </div>

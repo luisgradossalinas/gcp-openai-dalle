@@ -18,8 +18,9 @@ import urllib.parse
 bucket_name = os.environ.get('BUCKET_NAME')
 project = os.environ.get('PROJECT_ID')
 dataset_id = os.environ.get('DATASET')
-env_secret_openai = os.environ.get('OPENAI_APIKEY') #"OPENAI_APIKEY"
-env_secret_ultramsg = os.environ.get('ULTRAMSG') #"ULTRAMSG"
+env_secret_openai = os.environ.get('OPENAI_APIKEY')
+env_secret_ultramsg = os.environ.get('ULTRAMSG')
+table_dalle = os.environ.get('DALLE_TABLE')
 
 sm = secretmanager.SecretManagerServiceClient()
 db = firestore.Client(project = project)
@@ -64,14 +65,13 @@ def main_handler(event, context):
     image_url = response['data'][0]['url']
     print(image_url)
 
-    # Descarga la imagen de la URL
     response = requests.get(image_url)
     image_data = response.content
 
     file_name = str(uuid.uuid4()) + ".jpg"
     file_path = f"images/{file_name}"
 
-    # Sube la imagen a Cloud Storage
+    # Upload image to Cloud Storage
     bucket = storage.get_bucket(bucket_name)
     blob = bucket.blob(file_path)
     blob.upload_from_string(image_data, content_type = response.headers['Content-Type'])
@@ -83,7 +83,7 @@ def main_handler(event, context):
     output_wsp = p_name + ", the image generated from this text is sent to you (" + p_msg + ")."
     print(output_wsp)
 
-    #send whatsapp
+    # Send message by WhatsApp
     payload = "token=" + token + "&to=%2B" + p_cel + "&image=" + img_bas64 + "&caption=" + output_wsp
     payload = payload.encode('utf8').decode('iso-8859-1')
     headers = {'content-type': 'application/x-www-form-urlencoded'}
@@ -91,7 +91,7 @@ def main_handler(event, context):
     response = requests.request("POST", url, data = payload, headers = headers)
     print(response)
 
-    collection_name = "prueba"
+    collection_name = "dalle_data"
 
     doc_ref = fs.collection(collection_name).document(str(int(time.time())))
 
@@ -106,9 +106,13 @@ def main_handler(event, context):
         "freg" : date_reg
     }
 
-    # Guarda el documento en Firestore
+    # Save data in Firestore
     doc_ref.set(doc_data)
 
-    #insert bigquery
+    # Insert bigquery
+    bigquery_data = doc_data
+    bigquery_data["id"] = int(time.time())
+    table_ref = f"{project}.{dataset_id}.{table_dalle}"
+    bq.insert_rows_json(table_ref, [bigquery_data])
 
     return 'Ok'
