@@ -70,11 +70,9 @@ Ingresamos datos en el formulario, que generará una imagen en Dall-e y será en
 
 Texto a generar en Dall-e por ejemplo : Mont Saint Michel of France from an aerial view in the day
 
-![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/183805df-83ab-45fd-80db-0007e063f2d9)
-
 Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
-<img width="700" src="https://user-images.githubusercontent.com/2066453/236975778-5e042c9d-e907-43f6-bf69-826255b7abfc.png">
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/183805df-83ab-45fd-80db-0007e063f2d9)
 
 ## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
 
