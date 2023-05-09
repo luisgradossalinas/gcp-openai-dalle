@@ -68,6 +68,8 @@ Ingresamos datos en el formulario, que generará una imagen en Dall-e y será en
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972960-7ab49057-c35a-4003-aeb6-708411abf409.png">
 
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/4a4e8df6-3990-48c1-a776-6db77e3a1180)
+
 Texto a generar en Dall-e por ejemplo : Mont Saint Michel of France from an aerial view in the day
 
 Luego se te enviará la imagen generada en Dall-e por WhatsApp.
