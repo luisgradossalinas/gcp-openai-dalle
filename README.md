@@ -57,7 +57,15 @@ Clic a la URL generado y se abrirá una página con el formulario web.
 
 Ingresamos datos en el formulario.
 
-<img width="700" src="https://user-images.githubusercontent.com/2066453/36972849-cd53ca9b-a13a-4f86-adb2-0f4cf4eb2405.png">
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236972960-7ab49057-c35a-4003-aeb6-708411abf409.png">
+
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236973192-824f65d0-d4ae-4791-ad78-48de9ec71eec.png">
+
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236973476-209f4b2a-c103-497d-a8f2-011d47cb6582.png">
+
+Luego se te enviará la imagen generada en Dall-e por WhatsApp.
+
+imagen
 
 ## Documentación
 https://realpython.com/generate-images-with-dalle-openai-api
