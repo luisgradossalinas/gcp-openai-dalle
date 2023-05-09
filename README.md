@@ -13,6 +13,10 @@ En Cloud Shell.
 	export PROJECT_ID=TUPROJECTID
     export OPENAI_APIKEY=TUKEY
 
+Ejecutar el siguiente comando en el terminal de linux.
+
+	git clone https://github.com/luisgradossalinas/gcp-openai-dalle
+
 Habilitar las APIs.
 
     gcloud services enable secretmanager.googleapis.com cloudfunctions.googleapis.com iam.googleapis.com artifactregistry.googleapis.com iam.googleapis.com cloudbuild.googleapis.com run.googleapis.com firestore.googleapis.com --project $PROJECT_ID
