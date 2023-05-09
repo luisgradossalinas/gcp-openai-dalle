@@ -82,6 +82,9 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Revisando registro en Firestore
 
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/17ffd5d5-516b-4ad0-b186-bd8254ef78cc)
+
+## Imagen almacenada en Cloud Storage
 
 ## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
 
