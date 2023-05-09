@@ -116,11 +116,16 @@ No olvidar eliminar los recursos, para no incurrir en costos inesperados.
 
 Ejecutar en Cloud Shell.
 
-	gcloud run services delete flask-web-dalle --region us-central1
-	bq rm -r -d -f $PROJECT_ID:ds_dalle
-	gcloud storage ls | grep images | awk {'print "gcloud storage rm --recursive " $1 " "'} | sh
 	terraform destroy --auto-approve
 
 Si se tiene problemas al eliminar los recursos desde Terraform, realizarlo manualmente.
+
+	gcloud run services delete flask-web-dalle --region us-central1
+	bq rm -r -d -f $PROJECT_ID:ds_dalle
+	gcloud storage ls | grep images | awk {'print "gcloud storage rm --recursive " $1 " "'} | sh
+	gcloud pubsub topics delete topic-dalle-streaming
+	gcloud functions delete fnc-dalle-generate-image
+	gcloud secrets delete OPENAI_APIKEY
+	gcloud secrets delete ULTRAMSG
 
 Si se desea mantener los recursos creados, tener en cuenta el precio de cada servicio.
