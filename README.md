@@ -1,4 +1,4 @@
-# gcp-openai-dalle
+# Google Cloud integration with Dall-e (OpenAI) and WhatsApp
 
 <img width="900" src="https://user-images.githubusercontent.com/2066453/236971336-4e5a5585-f5ba-4985-a182-97bad6df2b32.png">
 
