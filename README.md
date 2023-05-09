@@ -54,3 +54,15 @@ Clic en Deploy, esperamos un minutos que se cree el recurso en Cloud Run.
 Clic a la URL generado y se abrirá una página con el formulario web.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972564-705a964f-4eec-4b72-a143-baab90d11632.png">
+
+Ingresamos datos en el formulario.
+
+<img width="700" src="https://user-images.githubusercontent.com/2066453/36972849-cd53ca9b-a13a-4f86-adb2-0f4cf4eb2405.png">
+
+## Documentación
+https://realpython.com/generate-images-with-dalle-openai-api
+
+https://github.com/openai/openai-cookbook/blob/main/examples/dalle/Image_generations_edits_and_variations_with_DALL-E.ipynb
+
+## Agradecimientos
+Espero te haya servido esta solución, si pudiste replicarlo, puedes publicarlo en LinkedIn con tus aportes, cambios y etiquétame (https://www.linkedin.com/in/luisgrados).
