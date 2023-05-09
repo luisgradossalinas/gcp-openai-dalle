@@ -8,7 +8,7 @@
 - [Tener una cuenta en OpenAI](https://gist.github.com/luisgradossalinas/45c1c5ed27b7f73e0d3cf3bc0fbe846d)
 - [Tener una cuenta en UltraMSG](https://gist.github.com/luisgradossalinas/1380c0b42f85ed3a46e7e9ede4249f09)
 
-En Cloud Shell.
+Accedemos al servicios de Cloud Shell y abrimos un terminal.
 
 	export PROJECT_ID=TUPROJECTID
     export OPENAI_APIKEY=TUKEY
@@ -90,7 +90,7 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/9233a0af-ea3e-4502-ba5d-c688272c3111)
 
-## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
+## Puedes probar también nviando un mensaje directo al tema de Pub/Sub desde Gcloud.
 
 	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mont Saint Michael of France from an aerial view"
 
