@@ -92,11 +92,11 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Revisando registro en Firestore
 
-![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/17ffd5d5-516b-4ad0-b186-bd8254ef78cc)
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/f78ff938-7ddf-46ed-9b49-297b6272a8fd)
 
 ## Imagen almacenada en Cloud Storage
 
-![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/9233a0af-ea3e-4502-ba5d-c688272c3111)
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/61668a8b-c1e0-4aa8-ba15-5e09df945475)
 
 ## Puedes probar también enviando un mensaje directo al tema de Pub/Sub desde Gcloud.
 
