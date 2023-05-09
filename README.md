@@ -49,7 +49,8 @@ GOOGLE_CLOUD_PROJECT:TUPROJECTID
 
 Clic en Deploy, esperamos un minutos que se cree el recurso en Cloud Run.
 
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236972477-21d5fbab-46d8-4834-9ce8-84bd657dc19c.png">
 
+Clic a la URL generado y se abrirá una página con el formulario web.
 
-
-
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236972564-705a964f-4eec-4b72-a143-baab90d11632.png">
