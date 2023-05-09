@@ -1,6 +1,6 @@
 # gcp-openai-dalle
 
-![openai-chatgpt-dalle - gcp-dalle](https://user-images.githubusercontent.com/2066453/236551441-765ddcaf-6048-47d6-b043-e1798bdcb308.png)
+<img width="900" src="https://user-images.githubusercontent.com/2066453/236971336-4e5a5585-f5ba-4985-a182-97bad6df2b32.png">
 
 ## Requisitos
 
