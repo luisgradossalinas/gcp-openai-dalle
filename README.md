@@ -52,9 +52,9 @@ Seleccionamos la location : name5 (United States)) y clic en Create database.
 
 ![firestore02](https://user-images.githubusercontent.com/2066453/220948628-0c1836f8-acc7-4705-93f4-69bfb6da9270.png)
 
-## Desplegar recurso en Cloud Run
+## Desplegar recurso en Cloud Run desde Cloud Shell
 
-Ir a Cloud y clic en la parte inferior donde dice Cloud Code -> Deploy to Cloud Run.
+En la parte inferior clic en Cloud Code y aparecerán varias opciones, seleccionar **Deploy to Cloud Run**.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972074-a5dd1aae-960c-4b92-8f1e-20edd29b71b0.png">
 
