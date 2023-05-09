@@ -80,7 +80,7 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Revisando registro en BigQuery
 
-
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/863791d5-c2fb-49ef-8989-2fe1a56de398)
 
 ## Revisando registro en Firestore
 
