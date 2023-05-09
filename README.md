@@ -34,4 +34,22 @@ Crear los recursos en Google Cloud.
 
 gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987603599,msg="Mount Saint Michael of France from an aerial view"
 
-GOOGLE_CLOUD_PROJECT:hypnotic-guard-368114
+
+## Desplegar Cloud Run con formulario web
+
+Ir a Cloud y clic en la parte inferior donde dice Cloud Code -> Deploy to Cloud Run.
+
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236972074-a5dd1aae-960c-4b92-8f1e-20edd29b71b0.png">
+
+Definimos una variable de entorno, clic en Show Advanced Settings
+
+GOOGLE_CLOUD_PROJECT:TUPROJECTID
+
+<img width="700" src="https://user-images.githubusercontent.com/2066453/236972306-98bb9629-7678-441c-9f13-d28dbf7b201f.png">
+
+Clic en Deploy, esperamos un minutos que se cree el recurso en Cloud Run.
+
+
+
+
+
