@@ -121,4 +121,6 @@ Ejecutar en Cloud Shell.
 	gcloud storage ls | grep images | awk {'print "gcloud storage rm --recursive " $1 " "'} | sh
 	terraform destroy --auto-approve
 
+Si se tiene problemas al eliminar los recursos desde Terraform, realizarlo manualmente.
+
 Si se desea mantener los recursos creados, tener en cuenta el precio de cada servicio.
