@@ -80,11 +80,15 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Revisando registro en BigQuery
 
+
+
 ## Revisando registro en Firestore
 
 ![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/17ffd5d5-516b-4ad0-b186-bd8254ef78cc)
 
 ## Imagen almacenada en Cloud Storage
+
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/9233a0af-ea3e-4502-ba5d-c688272c3111)
 
 ## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
 
@@ -97,4 +101,5 @@ https://realpython.com/generate-images-with-dalle-openai-api
 https://github.com/openai/openai-cookbook/blob/main/examples/dalle/Image_generations_edits_and_variations_with_DALL-E.ipynb
 
 ## Agradecimientos
+
 Espero te haya servido esta solución, si pudiste replicarlo, puedes publicarlo en LinkedIn con tus aportes, cambios y etiquétame (https://www.linkedin.com/in/luisgrados).
