@@ -100,7 +100,7 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Puedes probar también enviando un mensaje directo al tema de Pub/Sub desde Gcloud.
 
-	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mont Saint Michael of France from an aerial view"
+	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="3D render of a floating futuristic castle in a clear sky, digital art"
 
 ## Agradecimientos
 
