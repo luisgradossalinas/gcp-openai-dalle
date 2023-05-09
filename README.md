@@ -8,7 +8,11 @@
 - [Tener una cuenta en OpenAI](https://gist.github.com/luisgradossalinas/45c1c5ed27b7f73e0d3cf3bc0fbe846d)
 - [Tener una cuenta en UltraMSG](https://gist.github.com/luisgradossalinas/1380c0b42f85ed3a46e7e9ede4249f09)
 
-Accedemos al servicios de Cloud Shell y abrimos un terminal.
+Accedemos al servicio de Cloud Shell.
+
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/8ebebf2f-4a5d-4038-969a-85369523934c)
+
+Abrimos un terminal y ejecutamos lo siguiente (reemplazamos los valores).
 
 	export PROJECT_ID=TUPROJECTID
     export OPENAI_APIKEY=TUKEY
