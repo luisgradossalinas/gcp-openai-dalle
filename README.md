@@ -21,7 +21,7 @@ En el terminal ejecutamos lo siguiente (reemplazamos los valores).
 	export PROJECT_ID=TUPROJECTID
     export OPENAI_APIKEY=TUKEY
 
-Ejecutar el siguiente comando en el terminal de linux.
+Clonamos el repositorio, ejecutamos en el terminal.
 
 	git clone https://github.com/luisgradossalinas/gcp-openai-dalle
 
