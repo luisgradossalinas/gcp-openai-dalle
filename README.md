@@ -78,6 +78,11 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 - [Fotos en internet del Mont Saint Michael](https://www.google.com/search?q=monte+san+michel&rlz=1C1VDKB_esPE1048PE1048&sxsrf=APwXEdeo1CdQ8bVS91sl31hgNNQaSPHfGQ:1683651144020&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjCufWi2ej-AhXkCLkGHSmDBGEQ_AUoAnoECAEQBA&biw=1536&bih=754&dpr=1.25)
 
+## Revisando registro en BigQuery
+
+## Revisando registro en Firestore
+
+
 ## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
 
 	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mont Saint Michael of France from an aerial view"
