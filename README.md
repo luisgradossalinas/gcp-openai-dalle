@@ -12,7 +12,11 @@ Accedemos al servicio de Cloud Shell.
 
 ![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/8ebebf2f-4a5d-4038-969a-85369523934c)
 
-Abrimos un terminal y ejecutamos lo siguiente (reemplazamos los valores).
+Aparecerá la siguiente pantalla, clic en Terminal - New terminal.
+
+<img width="505" src="https://user-images.githubusercontent.com/2066453/220939457-804d371a-5627-451b-95bf-1e705d35b074.png">
+
+En el terminal ejecutamos lo siguiente (reemplazamos los valores).
 
 	export PROJECT_ID=TUPROJECTID
     export OPENAI_APIKEY=TUKEY
