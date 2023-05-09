@@ -27,7 +27,7 @@ Clonamos el repositorio, ejecutamos en el terminal.
 
 Habilitar las APIs.
 
-    gcloud services enable secretmanager.googleapis.com cloudfunctions.googleapis.com iam.googleapis.com artifactregistry.googleapis.com iam.googleapis.com cloudbuild.googleapis.com run.googleapis.com firestore.googleapis.com --project $PROJECT_ID
+    gcloud services enable secretmanager.googleapis.com cloudfunctions.googleapis.com iam.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com run.googleapis.com firestore.googleapis.com pubsub.googleapis.com --project $PROJECT_ID
 
 Ejecutar.
 
