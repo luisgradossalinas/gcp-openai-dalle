@@ -10,16 +10,12 @@
 
 En Cloud Shell.
 
-# corregir la variable ULTRAMSG_INSTANCE y ULTRAMSG_TOKEN, no se guarda el valor en el SM
-
 	export PROJECT_ID=TUPROJECTID
     export OPENAI_APIKEY=TUKEY
-	export ULTRAMSG_INSTANCE=TUINSTANCE
-	export ULTRAMSG_TOKEN=TUTOKEN
 
-Habilitar las APIs
+Habilitar las APIs.
 
-    gcloud services enable iam.googleapis.com
+    gcloud services enable secretmanager.googleapis.com cloudfunctions.googleapis.com iam.googleapis.com artifactregistry.googleapis.com iam.googleapis.com cloudbuild.googleapis.com run.googleapis.com firestore.googleapis.com --project $PROJECT_ID
 
 Ejecutar.
 
@@ -30,12 +26,13 @@ Ejecutar en Cloud Shell.
 	cd gcp-openai-dalle/iac
 	terraform init
 
-Crear los recursos en Google Cloud.
+Crear los recursos en Google Cloud, ingresar los valores de UltraMsg.
 
-	terraform apply -var="project=$PROJECT_ID" -var="openai_apikey=$OPENAI_APIKEY" -var 'ultramsg={"instance": "$ULTRAMSG_INSTANCE", "token": "$ULTRAMSG_TOKEN"}'
+	terraform apply -var="project=$PROJECT_ID" -var="openai_apikey=$OPENAI_APIKEY" -var 'ultramsg={"instance": "REPLACE_ULTRAMSG_INSTANCE", "token": "REPLACE_ULTRAMSG_TOKEN"}'
+
+## Activamos Firestore.
 
 gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987603599,msg="Mount Saint Michael of France from an aerial view"
-
 
 ## Desplegar Cloud Run con formulario web
 
@@ -53,15 +50,15 @@ Clic en Deploy, esperamos un minutos que se cree el recurso en Cloud Run.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972477-21d5fbab-46d8-4834-9ce8-84bd657dc19c.png">
 
-Clic a la URL generado y se abrirá una página con el formulario web.
+Clic a la URL generadA y se abrirá una página con el formulario web.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972564-705a964f-4eec-4b72-a143-baab90d11632.png">
 
-Ingresamos datos en el formulario.
+Ingresamos datos en el formulario, que generará una imagen en Dall-e y será enviado por WhatsApp.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972960-7ab49057-c35a-4003-aeb6-708411abf409.png">
 
-Texto a generar por ejemplo : Mont Saint Michel of France from an aerial view in the day
+Texto a generar en Dall-e por ejemplo : Mont Saint Michel of France from an aerial view in the day
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236975721-b380695f-300b-4750-a5f0-6e99ed21eb0a.png">
 
@@ -70,6 +67,7 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236975778-5e042c9d-e907-43f6-bf69-826255b7abfc.png">
 
 ## Documentación
+
 https://realpython.com/generate-images-with-dalle-openai-api
 
 https://github.com/openai/openai-cookbook/blob/main/examples/dalle/Image_generations_edits_and_variations_with_DALL-E.ipynb

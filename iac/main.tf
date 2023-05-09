@@ -139,10 +139,9 @@ resource "google_project_iam_member" "example_sa_bigquery" {
   member  = "serviceAccount:${google_service_account.sa_function.email}"
 }
 
-## cloud functions v2
 resource "google_cloudfunctions2_function" "function" {
   name        = "fnc-dalle-generate-image"
-  location    = "us-central1"
+  location    = var.region
   description = "Read message pub/sub, generate images with Dall-e and send image by WhatsApp"
 
   event_trigger {
@@ -184,7 +183,3 @@ output "bucket_images" {
 output "cloud_functions_v2" {
   value = google_cloudfunctions2_function.function.service_config[0].uri
 }
-
-#output "command_output" {
-#  value = "sh loadgcs/SH_Load_GCS.sh ${var.project} ${google_storage_bucket.images.name}"
-#}
