@@ -102,12 +102,6 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mont Saint Michael of France from an aerial view"
 
-## Documentación
-
-https://realpython.com/generate-images-with-dalle-openai-api
-
-https://github.com/openai/openai-cookbook/blob/main/examples/dalle/Image_generations_edits_and_variations_with_DALL-E.ipynb
-
 ## Agradecimientos
 
 Espero te haya servido esta solución, si pudiste replicarlo, puedes publicarlo en LinkedIn con tus aportes, cambios y etiquétame (https://www.linkedin.com/in/luisgrados).
