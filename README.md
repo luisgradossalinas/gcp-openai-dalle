@@ -72,7 +72,7 @@ Clic a la URL generadA y se abrirá una página con el formulario web.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972564-705a964f-4eec-4b72-a143-baab90d11632.png">
 
-Ingresamos datos en el formulario, que generará una imagen en Dall-e y será enviado por WhatsApp.
+Ingresamos datos en el formulario, que generará una imagen en Dall-e y será enviada por WhatsApp.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236972960-7ab49057-c35a-4003-aeb6-708411abf409.png">
 
