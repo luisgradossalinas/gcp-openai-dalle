@@ -100,7 +100,11 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Puedes probar también enviando un mensaje directo al tema de Pub/Sub desde Gcloud.
 
-	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Tu nombre",cel=Tu celular ejemplo 51987654670,msg="3D render of a floating futuristic castle in a clear sky, digital art"
+	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Tu nombre",cel=Tu celular ejemplo 51987654670,msg="3D render of a floating futuristic castle in a clear sky digital art"
+
+## Imagen generado por Dall-e
+
+![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/13790a45-77ba-4416-9335-4d7fb720461f)
 
 ## Agradecimientos
 
