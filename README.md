@@ -114,7 +114,7 @@ Espero te haya servido esta solución, si pudiste replicarlo, puedes publicarlo 
 
 No olvidar eliminar los recursos, para no incurrir en costos inesperados.
 
-Ejecutar en Cloud Shell.
+Ejecutar en Cloud Shell, desde la carpeta iac.
 
 	terraform destroy --auto-approve
 
