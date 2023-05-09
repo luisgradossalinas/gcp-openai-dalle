@@ -32,9 +32,17 @@ Crear los recursos en Google Cloud, ingresar los valores de UltraMsg.
 
 ## Activamos Firestore.
 
+Nos vamos al servicio de Firestore, clic en NATIVE MODE.
+
+![firestore01](https://user-images.githubusercontent.com/2066453/220948582-70e3255a-b4d1-487c-b092-b48511813303.png)
+
+Seleccionamos la location : name5 (United States)) y clic en Create database.
+
+![firestore02](https://user-images.githubusercontent.com/2066453/220948628-0c1836f8-acc7-4705-93f4-69bfb6da9270.png)
+
 gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987603599,msg="Mount Saint Michael of France from an aerial view"
 
-## Desplegar Cloud Run con formulario web
+## Desplegar recurso en Cloud Run
 
 Ir a Cloud y clic en la parte inferior donde dice Cloud Code -> Deploy to Cloud Run.
 
