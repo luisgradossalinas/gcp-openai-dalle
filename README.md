@@ -40,8 +40,6 @@ Seleccionamos la location : name5 (United States)) y clic en Create database.
 
 ![firestore02](https://user-images.githubusercontent.com/2066453/220948628-0c1836f8-acc7-4705-93f4-69bfb6da9270.png)
 
-gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987603599,msg="Mount Saint Michael of France from an aerial view"
-
 ## Desplegar recurso en Cloud Run
 
 Ir a Cloud y clic en la parte inferior donde dice Cloud Code -> Deploy to Cloud Run.
@@ -73,6 +71,10 @@ Texto a generar en Dall-e por ejemplo : Mont Saint Michel of France from an aeri
 Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 <img width="700" src="https://user-images.githubusercontent.com/2066453/236975778-5e042c9d-e907-43f6-bf69-826255b7abfc.png">
+
+## Prueba enviando mensaje directo al tema de Pub/Sub desde Gcloud.
+
+	gcloud pubsub topics publish topic-dalle-streaming --attribute name="Martin",cel=51987687609,msg="Mount Saint Michael of France from an aerial view"
 
 ## Documentación
 
