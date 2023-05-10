@@ -104,7 +104,7 @@ Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
 ## Imagen generada por Dall-e
 
-![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/13790a45-77ba-4416-9335-4d7fb720461f)
+<img width="700" src="https://user-images.githubusercontent.com/2066453/237440771-5ec9db9b-ad37-4f9e-bce9-b392fcea8249.png">
 
 ## Agradecimientos
 
