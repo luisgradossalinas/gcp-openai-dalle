@@ -82,7 +82,7 @@ Texto a generar en Dall-e por ejemplo : Mont Saint Michel of France from an aeri
 
 Luego se te enviará la imagen generada en Dall-e por WhatsApp.
 
-![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/183805df-83ab-45fd-80db-0007e063f2d9)
+<img width="700" src="https://user-images.githubusercontent.com/2066453/237465373-5ba783cd-607c-4cbf-a8f0-d6b5eca907fe.png">
 
 - [Fotos en internet del Mont Saint Michael](https://www.google.com/search?q=monte+san+michel&rlz=1C1VDKB_esPE1048PE1048&sxsrf=APwXEdeo1CdQ8bVS91sl31hgNNQaSPHfGQ:1683651144020&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjCufWi2ej-AhXkCLkGHSmDBGEQ_AUoAnoECAEQBA&biw=1536&bih=754&dpr=1.25)
 
