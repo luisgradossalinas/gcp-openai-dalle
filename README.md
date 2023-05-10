@@ -10,7 +10,7 @@
 
 Accedemos al servicio de Cloud Shell.
 
-![image](https://github.com/luisgradossalinas/gcp-openai-dalle/assets/2066453/8ebebf2f-4a5d-4038-969a-85369523934c)
+<img width="505" src="https://user-images.githubusercontent.com/2066453/237439655-c712bc03-fb4a-49cd-b6e2-3acd13c67dac.png">
 
 Aparecerá la siguiente pantalla, clic en Terminal - New terminal.
 
